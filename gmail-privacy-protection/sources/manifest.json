@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Privacy Protection",
+  "description": "Gmailのプライバシーを保護するための機能を提供します",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://mail.google.com/*"],
+  "version": "1.0.0",
+  "icons": {
+    "16": "assets/enabled-symbols/16.png",
+    "32": "assets/enabled-symbols/32.png",
+    "48": "assets/enabled-symbols/48.png",
+    "128": "assets/enabled-symbols/128.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "assets/enabled-symbols/16.png",
+      "32": "assets/enabled-symbols/32.png",
+      "48": "assets/enabled-symbols/48.png",
+      "128": "assets/enabled-symbols/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "css": ["content/index.css", "index.css"],
+      "js": ["content/index.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
