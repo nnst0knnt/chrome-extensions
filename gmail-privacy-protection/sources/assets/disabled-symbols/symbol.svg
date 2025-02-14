@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- 最外層の青枠 -->
+  <circle cx="64" cy="64" r="64" fill="#4285f4"/>
+  <!-- 白枠 -->
+  <circle cx="64" cy="64" r="60" fill="white"/>
+  <!-- 内側の青丸 -->
+  <circle cx="64" cy="64" r="56" fill="#7ba3f6"/>
+  
+  <!-- 封筒のグラデーション定義 -->
+  <defs>
+    <linearGradient id="foldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6e6e6"/>
+      <stop offset="50%" style="stop-color:white"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 封筒シャドウ -->
+  <path d="M30 46 L64 68 L98 46 L98 90 L30 90 L30 46Z" fill="#5384e6"/>
+  
+  <!-- 封筒（完全な形） -->
+  <path d="M28 44 L64 28 L100 44 L64 68 Z" fill="url(#foldGradient)"/>
+  <path d="M28 44 L64 68 L100 44 L100 92 L28 92 L28 44Z" fill="white"/>
+        
+  <!-- 封筒の折り目ライン -->
+  <path d="M28 44 L64 68 L100 44" fill="none" stroke="#7ba3f6" stroke-width="2"/>
+  
+  <!-- ロック -->
+  <rect x="48" y="56" width="32" height="26" rx="4" fill="#fdd663"/>
+  <rect x="50" y="58" width="28" height="22" rx="3" fill="#fccc45"/>
+  <path d="M56 56 V46 C56 40 72 40 72 46 V56" fill="none" stroke="#fdd663" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- 極太の斜線 -->
+  <!-- 黒い影を追加してさらにコントラストを強化 -->
+  <line x1="28" y1="100" x2="100" y2="28" stroke="rgba(0,0,0,0.3)" stroke-width="40" stroke-linecap="round"/>
+  <!-- 白い縁取り -->
+  <line x1="28" y1="100" x2="100" y2="28" stroke="white" stroke-width="36" stroke-linecap="round"/>
+  <!-- 赤い線 -->
+  <line x1="28" y1="100" x2="100" y2="28" stroke="#ff0000" stroke-width="28" stroke-linecap="round"/>
+</svg>

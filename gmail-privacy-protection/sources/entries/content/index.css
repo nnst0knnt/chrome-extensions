@@ -1,0 +1,343 @@
+:root {
+  --font-main:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans JP',
+    sans-serif;
+}
+
+.gpp-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  backdrop-filter: blur(5px) !important;
+  transition:
+    visibility 0s linear,
+    opacity 0.3s ease-in-out,
+    background 0.3s ease-in-out !important;
+}
+
+.gpp-overlay.light-mode {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.97),
+    rgba(240, 248, 255, 0.97)
+  ) !important;
+  transition: background 0.3s ease-in-out !important;
+}
+
+.gpp-overlay.dark-mode {
+  background: linear-gradient(135deg, rgba(33, 33, 33, 0.97), rgba(18, 18, 18, 0.97)) !important;
+  transition: background 0.3s ease-in-out !important;
+}
+
+.gpp-overlay-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transition-delay: 0s !important;
+}
+
+.gpp-overlay-inactive {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition-delay: 0.3s, 0s, 0s !important;
+}
+
+.gpp-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  width: 360px;
+  height: auto;
+  font-family: var(--font-main);
+  animation: fade-in 0.3s ease;
+  transform-origin: center center;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease-in-out !important;
+}
+
+.gpp-container * {
+  transition:
+    opacity 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out !important;
+}
+
+.gpp-primary-message,
+.gpp-secondary-message {
+  transition: color 0.3s ease-in-out;
+}
+
+.gpp-overlay-active .gpp-container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.gpp-overlay-inactive .gpp-container {
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+}
+
+.gpp-container > * {
+  flex-shrink: 0;
+}
+
+.gpp-container.height-auto {
+  justify-content: start !important;
+  height: auto !important;
+}
+
+.light-mode .gpp-container {
+  background: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.3s ease-in-out !important;
+}
+
+.dark-mode .gpp-container {
+  background: rgba(48, 48, 48, 0.9);
+  transition: background-color 0.3s ease-in-out !important;
+}
+
+.gpp-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.gpp-symbol {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpp-message-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gpp-primary-message {
+  font-size: 24px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  flex-basis: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-mode .gpp-primary-message {
+  color: #202124;
+}
+
+.dark-mode .gpp-primary-message {
+  color: #ffffff;
+}
+
+.gpp-secondary-message {
+  font-size: 14px;
+  transition: color 0.3s ease;
+  font-weight: 400;
+  opacity: 0.9;
+  flex-basis: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-mode .gpp-secondary-message {
+  color: #5f6368;
+}
+
+.dark-mode .gpp-secondary-message {
+  color: #aaaaaa;
+}
+
+.gpp-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  gap: 12px;
+}
+
+.gpp-input-wrapper {
+  position: relative;
+  width: 100%;
+  flex-basis: 48px;
+}
+
+.gpp-input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 8px;
+  border: 2px solid #4285f4;
+  font-size: 16px;
+  font-family: var(--font-main);
+  height: 100%;
+}
+
+.gpp-symbol-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+}
+
+.gpp-symbol-button:hover {
+  color: #1a73e8;
+}
+
+.dark-mode .gpp-symbol-button {
+  color: #aaaaaa;
+}
+
+.dark-mode .gpp-symbol-button:hover {
+  color: #ffffff;
+}
+
+.gpp-input[type='text'] + .gpp-symbol-button {
+  opacity: 0.9;
+}
+
+.dark-mode .gpp-input {
+  background: rgba(48, 48, 48, 0.9);
+  color: #ffffff;
+  border-color: #5f6368;
+}
+
+.gpp-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  flex-basis: 48px;
+}
+
+.gpp-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.gpp-button:not(:disabled):hover {
+  background-color: #1a73e8;
+  transform: translateY(-1px);
+}
+
+.gpp-button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.gpp-button.secondary {
+  background-color: transparent;
+  border: 2px solid #4285f4;
+  width: 100%;
+  margin: 0;
+}
+
+.light-mode .gpp-button.secondary {
+  color: #1a73e8;
+  border-color: #1a73e8;
+  background: transparent;
+}
+
+.light-mode .gpp-button.secondary:hover {
+  background: rgba(26, 115, 232, 0.08);
+}
+
+.dark-mode .gpp-button.secondary {
+  color: #ffffff;
+  border-color: #5f6368;
+}
+
+.gpp-actions {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  flex-basis: 108px;
+  justify-content: end;
+}
+
+.gpp-input.error {
+  border-color: #d93025;
+}
+
+.gpp-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d93025;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: toast-in 0.3s ease forwards;
+}
+
+.dark-mode .gpp-toast {
+  background: #f28b82;
+  color: #202124;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
