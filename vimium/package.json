@@ -1,11 +1,16 @@
 {
   "scripts": {
-    "minify": "node minify.js"
+    "minify": "node minify.js",
+    "package:deps": "ncu",
+    "package:update": "ncu -i",
+    "package:update:force": "ncu -u",
+	"ci": "npm run minify"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
     "cssnano-preset-advanced": "^7.0.6",
-    "postcss": "^8.5.2"
+    "npm-check-updates": "^17.1.18",
+    "postcss": "^8.5.3"
   }
 }
