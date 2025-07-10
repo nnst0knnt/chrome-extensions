@@ -43,6 +43,10 @@
 	letter-spacing: .03em;
 }
 
+#hud.vimium-ui-component-visible {
+	opacity: 0 !important;
+}
+
 @keyframes hint-marker {
 	from {
 		transform: scale(.95);
