@@ -1,5 +1,5 @@
 /** Hint Marker */
-#vimiumHintMarkerContainer {
+#vimium-hint-marker-container {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -9,8 +9,8 @@
 	z-index: 99999999;
 }
 
-#vimiumHintMarkerContainer div.internalVimiumHintMarker,
-#vimiumHintMarkerContainer div.vimiumHintMarker {
+#vimium-hint-marker-container div.internal-vimium-hint-marker,
+#vimium-hint-marker-container div.internal-vimium-hint-marker {
 	background: rgba(16, 16, 24, .95);
 	border: 2px solid #2563eb;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, .2), 0 0 20px rgba(37, 99, 235, .3);
@@ -25,18 +25,18 @@
 	animation: hint-marker .2s cubic-bezier(.4, 0, .2, 1) forwards;
 }
 
-#vimiumHintMarkerContainer div.internalVimiumHintMarker .matchingCharacter {
+#vimium-hint-marker-container div.internal-vimium-hint-marker .matchingCharacter {
 	color: yellow;
 	font-size: 20px !important;
 }
 
-#vimiumHintMarkerContainer div.internalVimiumHintMarker~div.internalVimiumHintMarker,
-#vimiumHintMarkerContainer div.vimiumHintMarker~div.vimiumHintMarker {
+#vimium-hint-marker-container div.internal-vimium-hint-marker~div.internal-vimium-hint-marker,
+#vimium-hint-marker-container div.internal-vimium-hint-marker~div.internal-vimium-hint-marker {
 	opacity: .85;
 	transform: translateY(2px);
 }
 
-#vimiumHintMarkerContainer div span {
+#vimium-hint-marker-container div span {
 	color: #fff;
 	font: 700 15px "Ricty", "Source Code Pro", monospace;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
@@ -72,7 +72,7 @@
 	animation: vomnibar .3s cubic-bezier(.4, 0, .2, 1) forwards;
 }
 
-#vomnibar .vomnibarSearchArea {
+#vomnibar #vomnibar-search-area {
 	background: rgba(30, 30, 40, .95);
 	padding: 16px;
 	border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -82,7 +82,7 @@
 	justify-content: center;
 }
 
-#vomnibar .vomnibarSearchArea::before {
+#vomnibar #vomnibar-search-area::before {
 	content: "🔍 wiki zenn qiita youtube maps amazon rakuten deepl-en deepl-ja";
 	position: absolute;
 	top: 12px;
@@ -101,11 +101,11 @@
 	color: rgba(255, 255, 255, .9);
 }
 
-#vomnibar .vomnibarSearchArea:hover::before {
+#vomnibar #vomnibar-search-area:hover::before {
 	background: linear-gradient(to right, rgba(37, 99, 235, .2), rgba(124, 58, 237, .2));
 }
 
-#vomnibar .vomnibarSearchArea::after {
+#vomnibar #vomnibar-search-area::after {
 	content: "👆 command + space = search with engine（🔍）";
 	position: absolute;
 	top: 48px;
@@ -122,7 +122,7 @@
 	transition: .2s ease;
 }
 
-#vomnibar .vomnibarSearchArea:hover::after {
+#vomnibar #vomnibar-search-area:hover::after {
 	background: rgba(255, 255, 255, .12);
 	color: #fff;
 	font-weight: 600;
@@ -175,31 +175,31 @@
 	background: rgba(255, 255, 255, .05);
 }
 
-#vomnibar li .vomnibarTopHalf,
-#vomnibar li .vomnibarBottomHalf {
+#vomnibar li .top-half,
+#vomnibar li .bottom-half {
 	display: flex;
 	align-items: center;
 }
 
-#vomnibar li .vomnibarTopHalf {
+#vomnibar li .top-half {
 	column-gap: 8px;
 	width: 50%;
 	margin: 6px 0;
 }
 
-#vomnibar li .vomnibarTopHalf>* {
+#vomnibar li .top-half>* {
 	margin: 0 !important;
 }
 
-#vomnibar li .vomnibarTopHalf .vomnibarSource,
-#vomnibar li .vomnibarTopHalf:has(.vomnibarTitle:empty),
-#vomnibar li .vomnibarBottomHalf .vomnibarSource,
-#vomnibar li .vomnibarBottomHalf .vomnibarIcon {
+#vomnibar li .top-half .source,
+#vomnibar li .top-half:has(.title:empty),
+#vomnibar li .bottom-half .source,
+#vomnibar li .bottom-half .icon {
 	display: none !important;
 }
 
-#vomnibar li .vomnibarTopHalf .vomnibarTitle,
-#vomnibar li .vomnibarBottomHalf .vomnibarUrl {
+#vomnibar li .top-half .title,
+#vomnibar li .bottom-half .url {
 	display: block;
 	flex: 1;
 	overflow-x: hidden;
@@ -207,11 +207,11 @@
 	text-overflow: ellipsis;
 }
 
-#vomnibar li .vomnibarBottomHalf {
+#vomnibar li .bottom-half {
 	width: 50%;
 }
 
-#vomnibar li .vomnibarSource {
+#vomnibar li .source {
 	color: #2563eb;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -223,25 +223,25 @@
 	border-radius: 4px;
 }
 
-#vomnibar li .vomnibarSource.vomnibarNoInsertText {
+#vomnibar li .source-no-insert-text {
 	visibility: visible;
 }
 
-#vomnibar li .vomnibarTitle,
-#vomnibar li .vomnibarUrl {
+#vomnibar li .title,
+#vomnibar li .url {
 	color: #fff;
 	font: 600 16px "Ricty", "Source Code Pro", monospace;
 }
 
-#vomnibar li .vomnibarTitle .vomnibarMatch,
-#vomnibar li .vomnibarUrl .vomnibarMatch {
+#vomnibar li .title .match,
+#vomnibar li .url .match {
 	color: yellow;
 	text-underline-offset: 0;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-#vomnibar li.vomnibarSelected {
+#vomnibar li.selected {
 	background: rgba(37, 99, 235, .15);
 	transform: translateX(4px);
 	box-shadow: -4px 0 0 #2563eb;
@@ -260,7 +260,7 @@
 }
 
 /* HUD */
-div.vimiumHUD {
+#hud {
 	background: rgba(16, 16, 24, .95) !important;
 	border: 2px solid #2563eb;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, .2), 0 0 20px rgba(37, 99, 235, .3);
@@ -281,7 +281,7 @@ div.vimiumHUD {
 	animation: hud .2s cubic-bezier(.4, 0, .2, 1) forwards;
 }
 
-div.vimiumHUD .hud-find {
+#hud .hud-find {
 	border: none;
 	display: flex;
 	align-items: center;
@@ -289,25 +289,25 @@ div.vimiumHUD .hud-find {
 	padding: 0 24px !important;
 }
 
-div.vimiumHUD span#hud-find-input {
+#hud span#hud-find-input {
 	flex: 1;
 	display: block;
 	width: 100%;
 	overflow: hidden;
 }
 
-div.vimiumHUD span#hud-find-input:before {
+#hud span#hud-find-input:before {
 	position: absolute;
 	content: '  ⌕  ' !important;
 	left: 2px !important;
 }
 
-div.vimiumHUD span#hud-match-count {
+#hud span#hud-match-count {
 	float: none !important;
 	overflow: hidden;
 }
 
-div.vimiumHUD .vimiumHUDSearchArea {
+#hud #search-area {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -317,7 +317,7 @@ div.vimiumHUD .vimiumHUDSearchArea {
 	padding: 0;
 }
 
-div.vimiumHUD .vimiumHUDSearchAreaInner {
+#hud #search-areaInner {
 	background: transparent;
 	display: flex;
 	justify-content: center;
@@ -328,7 +328,7 @@ div.vimiumHUD .vimiumHUDSearchAreaInner {
 	padding: 0;
 }
 
-div.vimiumHUDSearchAreaInner>* {
+#hud #search-area>* {
 	color: white !important;
 	font-weight: bold;
 }
