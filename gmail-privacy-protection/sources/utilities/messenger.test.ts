@@ -18,8 +18,10 @@ describe('Messenger', () => {
 
   describe('cast', () => {
     it('タブにメッセージを送信できること', async () => {
-      vi.spyOn(chrome.tabs, 'query').mockResolvedValue([{ id: 123 } as chrome.tabs.Tab]);
-      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(undefined);
+      (vi.spyOn(chrome.tabs, 'query') as ReturnType<typeof vi.spyOn>).mockResolvedValue([
+        { id: 123 } as chrome.tabs.Tab,
+      ]);
+      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(void 0);
 
       await Messenger.cast({
         kind: MessageKinds.State,
@@ -44,8 +46,8 @@ describe('Messenger', () => {
     });
 
     it('タブが存在しない場合、送信処理をスキップすること', async () => {
-      vi.spyOn(chrome.tabs, 'query').mockResolvedValue([]);
-      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(undefined);
+      (vi.spyOn(chrome.tabs, 'query') as ReturnType<typeof vi.spyOn>).mockResolvedValue([]);
+      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(void 0);
 
       await Messenger.cast({ kind: MessageKinds.State, value: true });
 
@@ -54,8 +56,10 @@ describe('Messenger', () => {
     });
 
     it('タブIDが存在しない場合、送信処理をスキップすること', async () => {
-      vi.spyOn(chrome.tabs, 'query').mockResolvedValue([{} as chrome.tabs.Tab]);
-      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(undefined);
+      (vi.spyOn(chrome.tabs, 'query') as ReturnType<typeof vi.spyOn>).mockResolvedValue([
+        {} as chrome.tabs.Tab,
+      ]);
+      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(void 0);
 
       await Messenger.cast({ kind: MessageKinds.State, value: true });
 
@@ -64,7 +68,9 @@ describe('Messenger', () => {
     });
 
     it('sendMessage中にエラーが発生した場合、ログに記録すること', async () => {
-      vi.spyOn(chrome.tabs, 'query').mockResolvedValue([{ id: 123 } as chrome.tabs.Tab]);
+      (vi.spyOn(chrome.tabs, 'query') as ReturnType<typeof vi.spyOn>).mockResolvedValue([
+        { id: 123 } as chrome.tabs.Tab,
+      ]);
       vi.spyOn(chrome.tabs, 'sendMessage').mockRejectedValue(new Error('送信エラー'));
 
       await Messenger.cast({ kind: MessageKinds.State, value: true });
@@ -81,11 +87,11 @@ describe('Messenger', () => {
     });
 
     it('複数のタブにメッセージを送信できること', async () => {
-      vi.spyOn(chrome.tabs, 'query').mockResolvedValue([
-        { id: 123 } as chrome.tabs.Tab,
-        { id: 456 } as chrome.tabs.Tab,
-      ]);
-      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(undefined);
+      (vi.spyOn(chrome.tabs, 'query') as ReturnType<typeof vi.spyOn>).mockResolvedValue([
+        { id: 123 },
+        { id: 456 },
+      ] as chrome.tabs.Tab[]);
+      vi.spyOn(chrome.tabs, 'sendMessage').mockResolvedValue(void 0);
 
       await Messenger.cast({ kind: MessageKinds.State, value: true });
 
@@ -97,7 +103,7 @@ describe('Messenger', () => {
 
   describe('notify', () => {
     it('ランタイムメッセージを送信できること', async () => {
-      vi.spyOn(chrome.runtime, 'sendMessage').mockResolvedValue(undefined);
+      vi.spyOn(chrome.runtime, 'sendMessage').mockResolvedValue(void 0);
 
       await Messenger.notify({
         kind: MessageKinds.State,

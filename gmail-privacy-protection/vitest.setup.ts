@@ -18,12 +18,12 @@ Object.defineProperty(global, 'chrome', {
       },
     },
     tabs: {
-      query: vi.fn(),
-      sendMessage: vi.fn(),
+      query: vi.fn().mockResolvedValue([]),
+      sendMessage: vi.fn().mockResolvedValue(void 0),
     },
     runtime: {
       getURL: vi.fn((path) => `chrome-extension://mock-extension-id/${path}`),
-      sendMessage: vi.fn(),
+      sendMessage: vi.fn().mockResolvedValue(void 0),
       onMessage: {
         addListener: vi.fn(),
       },

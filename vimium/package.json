@@ -11,6 +11,6 @@
     "cssnano": "^7.0.7",
     "cssnano-preset-advanced": "^7.0.7",
     "npm-check-updates": "^18.0.1",
-    "postcss": "^8.5.3"
+    "postcss": "^8.5.6"
   }
 }
