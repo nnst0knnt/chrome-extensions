@@ -77,7 +77,7 @@ zenn: https://zenn.dev/search?q=%s Zenn
 qiita: https://qiita.com/search?q=%s Qiita
 youtube: https://www.youtube.com/results?search_query=%s Youtube
 maps: https://www.google.com/maps?q=%s Google maps
-amazon: https://www.amazon.co.jp/s?k=%s Amazon
+amazon: https://www.amazon.co.jp?k=%s Amazon
 rakuten: https://search.rakuten.co.jp/search/mall/%s 楽天
 deepl-en: https://www.deepl.com/ja/translator#en/ja/%s DeepL-英語から日本語
 deepl-ja: https://www.deepl.com/ja/translator#ja/en-us/%s DeepL-日本語から英語
