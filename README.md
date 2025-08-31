@@ -1,5 +1,12 @@
-# Chrome Extensions
+# chrome-extensions
 
-Chrome拡張機能およびその設定ファイルを管理するリポジトリです。
+## 概要
 
-詳細については、それぞれのディレクトリ内のREADMEを参照してください。
+Chrome拡張機能の開発ファイルとその設定を管理するリポジトリです。
+
+## 技術スタック
+
+- TypeScript
+- HTML
+- CSS
+- Chrome Extension API
